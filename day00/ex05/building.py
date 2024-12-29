@@ -2,13 +2,24 @@ import sys
 
 
 def count(text: str):
-    
+    """
+    args (text: str) The text to analyze,
+    print th sum of:
+    upper-case
+    characters
+    lower-case characters
+    punctuation
+    characters
+    digits
+    spaces.
+    """
     punctuation_marks = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     punctuation_number = 0
     upper = 0
     lower = 0
     spaces = 0
     digits = 0
+
     for s in text:
         if s.islower():
             lower += 1
@@ -27,7 +38,13 @@ def count(text: str):
     print(f"{spaces} spaces")
     print(f"{digits} digits")
 
+
 def main():
+
+    """
+        validate the input.
+    """
+
     try:
         if sys.argv.__len__() > 2:
             raise AssertionError('too many args')
@@ -38,11 +55,11 @@ def main():
         count(x)
     except AssertionError as error:
         print(error)
-    except EOFError as error:
-        return;
-    except KeyboardInterrupt as error:
-        return;
+    except EOFError:
+        return
+    except KeyboardInterrupt:
+        return
+
 
 if __name__ == "__main__":
     main()
-    
