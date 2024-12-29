@@ -3,6 +3,10 @@ import sys
 
 
 def main():
+    '''take 2 args (string, n).\
+    \ncheck types.\
+    \nprint list of words with length greater than n.
+    '''
     try:
         if sys.argv.__len__() != 3:
             raise AssertionError('the arguments are bad')
@@ -18,5 +22,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print(ft_filter.__doc__)
-    print(filter.__doc__)
