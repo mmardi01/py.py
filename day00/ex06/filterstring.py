@@ -9,11 +9,14 @@ def main():
         s = sys.argv[1]
         words = s.split(' ')
         n = int(sys.argv[2])
-        res = ft_filter(lambda x : len(x) > n, words)
+        res = ft_filter(lambda x: len(x) > n, words)
         print(res)
     except Exception as error:
+        error
         print('AssertionError: the arguments are bad')
 
 
 if __name__ == "__main__":
     main()
+    print(ft_filter.__doc__)
+    print(filter.__doc__)
