@@ -1,0 +1,7 @@
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+  { name="eagle", email="eagle@42.fr" },
+]
+license.text = "MIT"
