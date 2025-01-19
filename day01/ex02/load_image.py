@@ -12,7 +12,7 @@ def ft_load(path: str) -> array:
     try:
         image = Image.open(path)
         x = np.array(image)
-        print(x.shape)
+        print("The shape of image is:", x.shape)
         return x
     except FileNotFoundError:
         print("File not found")
