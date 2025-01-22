@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 
 
 def main():
+    '''
+    load "animal.jpeg zoom it and display it
+    '''
     imageArray = ft_load('animal.jpeg')
     zoomedImage = Image.fromarray(imageArray[100:100+400, 450:450+400])
     grayArray = np.array(zoomedImage.convert("L"))
