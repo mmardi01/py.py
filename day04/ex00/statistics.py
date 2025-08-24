@@ -4,13 +4,22 @@ def calculateMean(arr: list[float]):
         res += i
     return res / len(arr)
 
+def calculateVar(arr: list[float]):
+    mean = calculateMean(arr)
+    diff = []
+    for i in arr:
+        diff.append((i - mean) ** 2)
+    print(f"var: {calculateMean(diff)}")
+
+def calculateStd(arr: list[float]):
+    mean = calculateMean(arr)
+    diff = []
+    for i in arr:
+        diff.append((i - mean) ** 2)
+    print(f"std: {calculateMean(diff)  ** 0.5}")
 
 def getQuartile(list1: list[float], list2: list[float], _len: int):
     med_index = int(len(list1) / 2)
-    print(list1)
-    print(list2)
-    print(list1[med_index - 1])
-    print(list1[med_index])
     if _len % 4 == 0:
         print(f"quartile : {[float((list1[med_index - 1] + list1[med_index]) / 2), float((list2[med_index - 1] + list2[med_index]) / 2)]}")
     else:
@@ -36,6 +45,11 @@ def ft_statistics(*args, **kwargs) -> None:
                 getQuartile(_sorted[0 : med_index], _sorted[med_index: len(args)], len(args))
             else:
                 getQuartile(_sorted[0 : med_index], _sorted[med_index + 1: len(args)], len(args))
+        elif val == "std":
+            calculateStd(args)
+        elif val == "var":
+            calculateVar(args)
+
 
 
     
