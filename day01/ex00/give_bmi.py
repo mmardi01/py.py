@@ -10,7 +10,7 @@ def give_bmi(height: list[int | float],
     of BMI values
     '''
     try:
-        if len(height) is not len(weight):
+        if len(height) != len(weight):
             raise AssertionError('lists must have the same length')
         a = np.array(height)
         b = np.array(weight)
@@ -21,7 +21,8 @@ def give_bmi(height: list[int | float],
         bmi = np.divide(b, squares).tolist()
         return bmi
     except Exception as e:
-        print(e)
+        print("An error occurred:", e)
+        return []
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
@@ -30,4 +31,6 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     a limit as parameters.
     It returns a list of booleans (True if above the limit).
     '''
+    if (len(bmi) == 0):
+        return []
     return [x > limit for x in bmi]
