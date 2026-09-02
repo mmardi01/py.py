@@ -3,6 +3,13 @@ import matplotlib.pyplot as plt
 
 
 def main():
+    """Display life expectancy against income per person for 1900.
+
+    Loads the income and the life expectancy files, takes the '1900'
+    column of each, prints both arrays, then draws one green dot per
+    country on a logarithmic x axis with a title and axis labels
+    before showing the figure.
+    """
     file_path = 'income_per_person_gdppercapita_ppp_inflation_adjusted.csv'
     income_data = load(file_path)
     life_expectancy_data = load('life_expectancy_years.csv')
